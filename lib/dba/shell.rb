@@ -59,13 +59,13 @@ module DBA::Shell
     printer = DBA::Printer.new(STDERR)
     printer.print_usage(program_name, command_parameters)
 
-    Kernel::abort
+    Kernel::exit(1)
   end
 
   def print_error(message)
     printer = DBA::Printer.new(STDERR)
     printer.print_error(message)
 
-    Kernel::abort
+    Kernel::exit(1)
   end
 end
