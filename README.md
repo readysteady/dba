@@ -1,6 +1,6 @@
 # dba
 
-A developer tool for working with development databases.
+Ruby command line tool for working with development databases.
 
 
 ## Installation

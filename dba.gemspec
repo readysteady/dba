@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.authors = ['Tim Craft']
   s.email = ['mail@timcraft.com']
   s.homepage = 'https://github.com/readysteady/dba'
-  s.description = 'A developer tool for working with development databases'
+  s.description = 'Ruby command line tool for working with development databases'
   s.summary = 'See description'
   s.files = Dir.glob('lib/**/*.rb') + %w[LICENSE.txt README.md dba.gemspec]
   s.required_ruby_version = '>= 2.3.0'
