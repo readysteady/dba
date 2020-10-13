@@ -35,6 +35,7 @@ module DBA::Shell
   def commands
     {
       'diff' => :Diff,
+      'dump' => :Dump,
       'edit' => :Edit,
       'find' => :Find,
       'indexes' => :Indexes,

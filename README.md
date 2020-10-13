@@ -19,6 +19,7 @@ You can connect to any database supported by [sequel](https://rubygems.org/gems/
     Usage: dba COMMAND
 
       dba diff URL
+      dba dump TABLE EXTENSION
       dba edit TABLE IDENTIFIER
       dba find TABLE IDENTIFIER
       dba indexes [TABLE]
