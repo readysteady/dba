@@ -52,7 +52,7 @@ module DBA::Shell
   end
 
   def program_name
-    File.basename($0)
+    'dba'
   end
 
   def print_usage
