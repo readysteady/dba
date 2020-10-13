@@ -39,6 +39,7 @@ module DBA::Shell
       'edit' => :Edit,
       'find' => :Find,
       'indexes' => :Indexes,
+      'load' => :Load,
       'pull' => :Pull,
       'sample' => :Sample,
       'schema' => :Schema,

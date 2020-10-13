@@ -23,6 +23,7 @@ You can connect to any database supported by [sequel](https://rubygems.org/gems/
       dba edit TABLE IDENTIFIER
       dba find TABLE IDENTIFIER
       dba indexes [TABLE]
+      dba load PATH
       dba pull TABLE URL
       dba sample TABLE [COLUMN]
       dba schema [TABLE]

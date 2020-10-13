@@ -17,4 +17,14 @@ module DBA::CSV
       end
     end
   end
+
+  def self.load(path, database, table_name)
+    dataset = database[table_name]
+
+    rows = ::CSV.read(path)
+
+    headers = rows.shift
+
+    dataset.import(headers, rows)
+  end
 end

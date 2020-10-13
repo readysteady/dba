@@ -9,4 +9,14 @@ module DBA::LDJSON
       end
     end
   end
+
+  def self.load(path, database, table_name)
+    dataset = database[table_name]
+
+    database.transaction do
+      File.readlines(path).each do |line|
+        dataset.insert(::JSON.parse(line))
+      end
+    end
+  end
 end
