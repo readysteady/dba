@@ -4,14 +4,13 @@ class DBA::Sample < DBA::Command
 
     column_name = column.to_sym if column
 
-    random_rows = database[table_name].order(random_function)
-
     if column_name
-      random_rows.distinct.select(column_name).limit(20).each do |row|
+      dataset = database[table_name].distinct.select(column_name)
+      dataset.from_self.order(random_function).limit(20).each do |row|
         puts row[column_name]
       end
     else
-      random_rows.first(3).each do |row|
+      database[table_name].order(random_function).first(3).each do |row|
         printer.print(row)
         printer.print_line
       end
