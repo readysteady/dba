@@ -32,7 +32,7 @@ module DBA::Database
     end
 
     if postgres_running?
-      return "postgres://localhost:5432/#{postgres_database_name}"
+      return 'postgres://localhost:5432/postgres'
     end
 
     if path = Dir['*.sqlite3'].first
@@ -77,20 +77,6 @@ module DBA::Database
     args['adapter'] = 'postgres' if args['adapter'] == 'postgresql'
     args['adapter'] = 'sqlite' if args['adapter'] == 'sqlite3'
     args
-  end
-
-  def postgres_database_name
-    heroku_app_name || working_directory_name
-  end
-
-  def heroku_app_name
-    if `git config --get remote.heroku.url`.chomp =~ %r{(?<=[:/])([^:/]+)\.git\z}
-      $1
-    end
-  end
-
-  def working_directory_name
-    File.basename(Dir.pwd)
   end
 
   def postgres_running?
