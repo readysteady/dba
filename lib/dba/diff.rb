@@ -8,7 +8,7 @@ class DBA::Diff < DBA::Command
 
     other_tables = other_database.tables
 
-    diff tables, other_tables
+    printer.print_diff tables, other_tables
 
     tables &= other_tables # only diff columns/indexes for tables that exist in both databases
 
@@ -21,7 +21,7 @@ class DBA::Diff < DBA::Command
 
   def list_columns(database, tables)
     tables.inject([]) do |columns, table_name|
-      columns + database.schema(table_name).map { |name, info| format_column(name, info) }
+      columns + database.schema(table_name).map { |name, info| format_column(name, info, table_name) }
     end
   end
 
@@ -31,7 +31,7 @@ class DBA::Diff < DBA::Command
     end
   end
 
-  def format_column(name, info_hash)
+  def format_column(name, info_hash, table_name)
     "#{table_name}.#{name} (#{info_hash.fetch(:type)})"
   end
 
