@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'dba'
-  s.version = '1.1.0'
+  s.version = '2.0.0'
   s.license = 'GPL-3.0'
   s.platform = Gem::Platform::RUBY
   s.authors = ['Tim Craft']
@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.description = 'Ruby command line tool for working with development databases'
   s.summary = 'See description'
   s.files = Dir.glob('lib/**/*.rb') + %w[CHANGES.md LICENSE.txt README.md dba.gemspec]
-  s.required_ruby_version = '>= 2.3.0'
+  s.required_ruby_version = '>= 2.5.0'
   s.add_dependency('zeitwerk', '~> 2', '>= 2.2')
   s.add_dependency('sequel', '~> 5')
   s.add_dependency('pastel', '~> 0')
