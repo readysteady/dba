@@ -27,6 +27,7 @@ You can connect to any database supported by [sequel](https://rubygems.org/gems/
       dba pull TABLE URL
       dba sample TABLE [COLUMN]
       dba schema [TABLE]
+      dba select TABLE COLUMN VALUE
       dba tables 
 
 

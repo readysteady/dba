@@ -43,6 +43,7 @@ module DBA::Shell
       'pull' => :Pull,
       'sample' => :Sample,
       'schema' => :Schema,
+      'select' => :Select,
       'tables' => :Tables
     }
   end
