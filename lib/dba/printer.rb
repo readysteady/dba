@@ -58,7 +58,7 @@ class DBA::Printer
       fields = []
       fields << "#{table_name}.#{column_name}"
       fields << muted(format_column_type(info_hash))
-      fields << muted('(primary key)') if info_hash[:primary_key]
+      fields << muted('{primary}') if info_hash[:primary_key]
 
       io.puts fields.join(' ')
     end
@@ -68,9 +68,12 @@ class DBA::Printer
 
   def print_indexes(indexes)
     indexes.each do |index_name, info_hash|
-      columns = info_hash.fetch(:columns).map(&:to_s).join(', ')
+      fields = []
+      fields << index_name
+      fields << muted('(' + info_hash.fetch(:columns).map(&:to_s).join(', ') + ')')
+      fields << muted('{unique}') if info_hash[:unique]
 
-      io.puts "#{index_name} (#{columns})"
+      io.puts fields.join(' ')
     end
   end
 
