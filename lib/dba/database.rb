@@ -3,6 +3,7 @@
 require 'sequel'
 require 'yaml'
 require 'erb'
+require 'socket'
 
 module DBA::Database
   extend self
@@ -93,6 +94,7 @@ module DBA::Database
   end
 
   def postgres_running?
-    !`lsof -i:5432`.strip.empty?
+    Socket.tcp('localhost', 5432) { :connected }
+  rescue Errno::ECONNREFUSED
   end
 end
