@@ -57,7 +57,7 @@ class DBA::Printer
     schema_hash.each do |column_name, info_hash|
       fields = []
       fields << "#{table_name}.#{column_name}"
-      fields << muted(info_hash[:type] || info_hash[:db_type])
+      fields << muted(format_column_type(info_hash))
       fields << muted('(primary key)') if info_hash[:primary_key]
 
       io.puts fields.join(' ')
@@ -94,6 +94,12 @@ class DBA::Printer
     when :req then name
     when :opt then "[#{name}]"
     end
+  end
+
+  def format_column_type(info_hash)
+    return info_hash[:db_type] unless info_hash[:type]
+    return info_hash[:type] unless info_hash[:db_type]&.end_with?('[]')
+    info_hash[:type].to_s + '[]'
   end
 
   def null
