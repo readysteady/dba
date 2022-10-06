@@ -1,3 +1,12 @@
+# 2.1.0
+
+* Fixed arity check for commands with optional arguments
+
+* Added support for .jsonl extension to dump and load commands
+
+* Added support for .ndjson extension to dump and load commands
+
+
 # 2.0.0
 
 * **Required ruby version is now 2.5.0**
