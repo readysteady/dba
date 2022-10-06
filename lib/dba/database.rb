@@ -64,12 +64,16 @@ module DBA::Database
     File.exist?('.env')
   end
 
+  def database_config_path
+    File.join('config', 'database.yml')
+  end
+
   def database_config?
-    File.exist?('config/database.yml')
+    File.exist?(database_config_path)
   end
 
   def database_config
-    YAML.load(ERB.new(File.read('config/database.yml')).result)
+    YAML.load(ERB.new(File.read(database_config_path)).result)
   end
 
   def development_database_args
