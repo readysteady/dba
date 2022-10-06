@@ -3,6 +3,7 @@
 class DBA::Dump < DBA::Command
   ADAPTERS = {
     'csv' => :CSV,
+    'jsonl' => :LDJSON,
     'ldjson' => :LDJSON,
     'ndjson' => :LDJSON,
     'yml' => :YAML,

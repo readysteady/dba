@@ -3,6 +3,7 @@
 class DBA::Load < DBA::Command
   ADAPTERS = {
     '.csv' => :CSV,
+    '.jsonl' => :LDJSON,
     '.ldjson' => :LDJSON,
     '.ndjson' => :LDJSON,
     '.yml' => :YAML,
@@ -27,7 +28,7 @@ class DBA::Load < DBA::Command
 
   def file_list(path)
     if File.directory?(path)
-      Dir.glob(File.join(path, '*.{csv,ldjson,ndjson,yml,yaml}'))
+      Dir.glob(File.join(path, '*.{csv,jsonl,ldjson,ndjson,yml,yaml}'))
     else
       [path]
     end
