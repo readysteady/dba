@@ -16,11 +16,7 @@ module DBA::Shell
 
     command = DBA.const_get(command)
 
-    arity = command.instance_method(:call).arity
-
-    if arity >= 0 && args.size != arity
-      raise DBA::Error, "incorrect number of args (given #{args.size}, expected #{arity})"
-    end
+    command.arity_check(args)
 
     database = DBA::Database.connect
 
