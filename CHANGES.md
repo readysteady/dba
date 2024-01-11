@@ -1,3 +1,10 @@
+# 2.2.0
+
+* Fixed compatibility with psych 4+
+
+* The sample command now excludes nil/null values
+
+
 # 2.1.0
 
 * Fixed arity check for commands with optional arguments
