@@ -73,7 +73,13 @@ module DBA::Database
   end
 
   def database_config
-    YAML.load(ERB.new(File.read(database_config_path)).result)
+    source = ERB.new(File.read(database_config_path)).result
+
+    if YAML.respond_to?(:unsafe_load)
+      YAML.unsafe_load(source)
+    else
+      YAML.load(source)
+    end
   end
 
   def development_database_args
