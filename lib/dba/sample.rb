@@ -5,7 +5,7 @@ class DBA::Sample < DBA::Command
     column_name = column.to_sym if column
 
     if column_name
-      dataset = database[table_name].distinct.select(column_name)
+      dataset = database[table_name].exclude(column_name => nil).distinct.select(column_name)
       dataset.from_self.order(random_function).limit(20).each do |row|
         puts row[column_name]
       end
