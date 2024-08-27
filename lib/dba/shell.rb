@@ -56,7 +56,7 @@ module DBA::Shell
   end
 
   def print_usage
-    printer = DBA::Printer.new(STDERR)
+    printer = DBA::Printer.new
     printer.print_usage(program_name, command_parameters)
 
     Kernel::exit(1)
