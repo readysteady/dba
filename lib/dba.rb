@@ -18,9 +18,12 @@ module DBA
   loader = Zeitwerk::Loader.new
   loader.tag = File.basename(__FILE__, '.rb')
   loader.inflector.inflect({
-    'dba' => 'DBA',
     'csv' => 'CSV',
+    'dba' => 'DBA',
+    'dbml_printer' => 'DBMLPrinter',
+    'dot_printer' => 'DOTPrinter',
     'ldjson' => 'LDJSON',
+    'plant_uml_printer' => 'PlantUMLPrinter',
     'yaml' => 'YAML'
   })
   loader.push_dir(__dir__)

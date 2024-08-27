@@ -30,6 +30,7 @@ module DBA::Shell
 
   def commands
     {
+      'diagram' => :Diagram,
       'diff' => :Diff,
       'dump' => :Dump,
       'edit' => :Edit,
