@@ -1,3 +1,10 @@
+# 2.3.0
+
+* Added diagram command for generating diagrams with Graphviz, DBML, or PlantUML
+
+* Usage is now printed to STDOUT instead of STDERR
+
+
 # 2.2.0
 
 * Fixed compatibility with psych 4+
