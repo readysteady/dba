@@ -1,3 +1,10 @@
+# 2.4.0
+
+* **Required ruby version is now 3.1.0**
+
+* Added bigdecimal gem dependency
+
+
 # 2.3.0
 
 * Added diagram command for generating diagrams with Graphviz, DBML, or PlantUML
