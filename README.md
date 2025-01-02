@@ -18,6 +18,7 @@ You can connect to any database supported by [sequel](https://rubygems.org/gems/
     $ dba
     Usage: dba COMMAND
 
+      dba diagram [PATH]
       dba diff URL
       dba dump TABLE EXTENSION
       dba edit TABLE IDENTIFIER
@@ -28,7 +29,7 @@ You can connect to any database supported by [sequel](https://rubygems.org/gems/
       dba sample TABLE [COLUMN]
       dba schema [TABLE]
       dba select TABLE COLUMN VALUE
-      dba tables 
+      dba tables
 
 
 ## ERROR: could not find database
