@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.license = 'GPL-3.0'
   s.platform = Gem::Platform::RUBY
   s.authors = ['Tim Craft']
-  s.email = ['mail@timcraft.com']
+  s.email = ['email@timcraft.com']
   s.homepage = 'https://github.com/readysteady/dba'
   s.description = 'Ruby command line tool for working with development databases'
   s.summary = 'See description'
